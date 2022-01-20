@@ -7,7 +7,6 @@ import com.eu.habbo.plugin.HabboPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.barrawi.plugintemplate.events.emulatorLoad;
-import xyz.barrawi.plugintemplate.userevents.LoginEvents;
 
 public class PluginTemplate extends HabboPlugin implements EventListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(PluginTemplate.class);
