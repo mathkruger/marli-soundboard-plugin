@@ -9,8 +9,6 @@ import com.eu.habbo.messages.outgoing.rooms.users.RoomUserActionComposer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.swing.plaf.nimbus.State;
-
 public class highfiveCommand extends Command {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(kissesCommand.class);

@@ -8,7 +8,7 @@ public class loadConfig {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(loadTexts.class);
 
-    public static void loadConfig() throws Exception {
+    public static void ILoadConfig() throws Exception {
         try {
             Emulator.getConfig().register("cmd_kisses.effect", "9");
             Emulator.getConfig().register("cmd_boom.allowed_rooms", "1;2;3");

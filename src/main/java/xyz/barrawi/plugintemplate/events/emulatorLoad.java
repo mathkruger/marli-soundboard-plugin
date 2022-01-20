@@ -19,10 +19,10 @@ public class emulatorLoad implements EventListener {
     public static void onEmulatorLoaded(EmulatorLoadedEvent event) throws IOException {
 
         try {
-            loadPlayerCommands.loadPlayerCommands();
-            loadConfig.loadConfig();
-            loadTexts.loadTexts();
-            checkDatabase.checkDatabase();
+            loadPlayerCommands.ILoadPlayerCommands();
+            loadConfig.ILoadConfig();
+            loadTexts.ILoadTexts();
+            checkDatabase.ICheckDatabase();
 
             LOGGER.info(" [Plugin Template] Plugin Template has been loaded!");
         } catch (Exception e) {

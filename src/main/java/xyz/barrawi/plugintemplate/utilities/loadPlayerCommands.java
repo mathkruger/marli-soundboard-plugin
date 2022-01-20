@@ -12,7 +12,7 @@ import xyz.barrawi.plugintemplate.commands.petCommand;
 public class loadPlayerCommands {
     private static final Logger LOGGER = LoggerFactory.getLogger(loadPlayerCommands.class);
 
-    public static void loadPlayerCommands() {
+    public static void ILoadPlayerCommands() {
         try {
             CommandHandler.addCommand(
                     new kissesCommand("cmd_kisses", Emulator.getTexts().getValue("cmd_kisses.keys").split(";")));

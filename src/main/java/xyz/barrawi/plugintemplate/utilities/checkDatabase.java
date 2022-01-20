@@ -31,7 +31,7 @@ public class checkDatabase {
         return defaultReturn;
     }
 
-    public static void checkDatabase() throws Exception {
+    public static void ICheckDatabase() throws Exception {
         try {
             boolean reloadPermissions = false;
 

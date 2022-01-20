@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 public class loadTexts {
     private static final Logger LOGGER = LoggerFactory.getLogger(loadTexts.class);
 
-    public static void loadTexts() throws Exception {
+    public static void ILoadTexts() throws Exception {
         try {
             Emulator.getTexts().register("commands.description.cmd_kisses", ":kisses <user>");
             Emulator.getTexts().register("cmd_kisses.keys", "kisses");
