@@ -1,4 +1,4 @@
-package xyz.barrawi.plugintemplate.utilities;
+package com.mathkruger.marlisoundboard.utilities;
 
 import com.eu.habbo.Emulator;
 import org.slf4j.Logger;

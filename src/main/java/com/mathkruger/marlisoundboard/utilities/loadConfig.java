@@ -1,4 +1,4 @@
-package xyz.barrawi.plugintemplate.utilities;
+package com.mathkruger.marlisoundboard.utilities;
 
 import com.eu.habbo.Emulator;
 import org.slf4j.Logger;
@@ -11,10 +11,9 @@ public class loadConfig {
     public static void ILoadConfig() throws Exception {
         try {
             Emulator.getConfig().register("cmd_kisses.effect", "9");
-            Emulator.getConfig().register("cmd_boom.allowed_rooms", "1;2;3");
 
         } catch (Exception e) {
-            LOGGER.error(" [Plugin Template] Failed to load config.", e);
+            LOGGER.error(" [Marli Soundboard] Failed to load config.", e);
         }
     }
 

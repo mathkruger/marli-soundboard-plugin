@@ -1,4 +1,4 @@
-package xyz.barrawi.plugintemplate.commands;
+package com.mathkruger.marlisoundboard.commands;
 
 import com.eu.habbo.Emulator;
 import com.eu.habbo.habbohotel.commands.Command;

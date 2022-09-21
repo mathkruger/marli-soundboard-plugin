@@ -1,5 +1,5 @@
 {
-    "main": "xyz.barrawi.plugintemplate.PluginTemplate",
-    "name": "Plugin Template",
-    "author": "Dippy"
+    "main": "com.mathkruger.marlisoundboard.MarliSoundboard",
+    "name": "Marli Soundboard Plugin",
+    "author": "MathKruger"
 }
