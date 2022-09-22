@@ -4,7 +4,6 @@ import com.eu.habbo.plugin.EventHandler;
 import com.eu.habbo.plugin.EventListener;
 import com.eu.habbo.plugin.events.emulator.EmulatorLoadedEvent;
 import com.mathkruger.marlisoundboard.utilities.checkDatabase;
-import com.mathkruger.marlisoundboard.utilities.loadConfig;
 import com.mathkruger.marlisoundboard.utilities.loadPlayerCommands;
 import com.mathkruger.marlisoundboard.utilities.loadTexts;
 import org.slf4j.Logger;
@@ -20,13 +19,12 @@ public class emulatorLoad implements EventListener {
 
         try {
             loadPlayerCommands.ILoadPlayerCommands();
-            loadConfig.ILoadConfig();
             loadTexts.ILoadTexts();
             checkDatabase.ICheckDatabase();
 
-            LOGGER.info(" [Plugin Template] Plugin Template has been loaded!");
+            LOGGER.info(" [Marli Soundboard] Marli Soundboard has been loaded!");
         } catch (Exception e) {
-            LOGGER.error(" [Plugin Template] Failed to load Plugin Template!", e);
+            LOGGER.error(" [Marli Soundboard] Failed to load Marli Soundboard!", e);
         }
     }
 

@@ -35,11 +35,7 @@ public class checkDatabase {
         try {
             boolean reloadPermissions = false;
 
-            reloadPermissions = registerPermission("cmd_kisses", reloadPermissions);
-            reloadPermissions = registerPermission("cmd_boom", reloadPermissions);
-            reloadPermissions = registerPermission("cmd_pet", reloadPermissions);
-            reloadPermissions = registerPermission("cmd_highfive", reloadPermissions);
-
+            reloadPermissions = registerPermission("cmd_playMarli", reloadPermissions);
             if (reloadPermissions)
                 Emulator.getGameEnvironment().getPermissionsManager().reload();
         } catch (Exception e) {

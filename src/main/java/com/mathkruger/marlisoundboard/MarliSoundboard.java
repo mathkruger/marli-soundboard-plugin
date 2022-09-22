@@ -38,6 +38,6 @@ public class MarliSoundboard extends HabboPlugin implements EventListener {
 
     @Override
     public boolean hasPermission(Habbo habbo, String s) {
-        return habbo.getHabboInfo().getRank().getLevel() == 7;
+        return true;
     }
 }

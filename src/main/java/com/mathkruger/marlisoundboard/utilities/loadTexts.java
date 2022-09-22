@@ -9,15 +9,8 @@ public class loadTexts {
 
     public static void ILoadTexts() throws Exception {
         try {
-            Emulator.getTexts().register("commands.description.cmd_kisses", ":kisses <user>");
-            Emulator.getTexts().register("cmd_kisses.keys", "kisses");
-            Emulator.getTexts().register("cmd_kisses.error.no_user", "You need to specify a user.");
-            Emulator.getTexts().register("cmd_kisses.error.self", "You can't kiss yourself.");
-            Emulator.getTexts().register("cmd_kisses.error.too_far", "You are too far away to kiss that user.");
-            Emulator.getTexts().register("cmd_kisses.error.not_found", "Could not find user %user%.");
-            Emulator.getTexts().register("cmd_kisses.kisser", "You kissed %user%.");
-            Emulator.getTexts().register("cmd_kisses.kissed", "%user% kissed you.");
-
+            Emulator.getTexts().register("commands.description.cmd_playMarli", ":playMarli <cachaca | amor | bertulina>");
+            Emulator.getTexts().register("cmd_playMarli.keys", "playMarli");
         } catch (Exception e) {
             LOGGER.error(" [Marli Soundboard] Error while loading texts", e);
         }
