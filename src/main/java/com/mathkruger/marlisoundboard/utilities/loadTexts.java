@@ -10,7 +10,9 @@ public class loadTexts {
     public static void ILoadTexts() throws Exception {
         try {
             Emulator.getTexts().register("commands.description.cmd_playMarli", ":playMarli <cachaca | amor | bertulina>");
+            Emulator.getTexts().register("commands.description.cmd_controlMarli", ":controlMarli <pausar | parar | volume> <0 - 100>");
             Emulator.getTexts().register("cmd_playMarli.keys", "playMarli");
+            Emulator.getTexts().register("cmd_controlMarli.keys", "controlMarli");
         } catch (Exception e) {
             LOGGER.error(" [Marli Soundboard] Error while loading texts", e);
         }

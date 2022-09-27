@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 
-public class PlayMarliAudioWebMessage {
+public class PlayMarliAudioWebMessage extends WebMessage {
     public String header;
     public JsonObject data;
 

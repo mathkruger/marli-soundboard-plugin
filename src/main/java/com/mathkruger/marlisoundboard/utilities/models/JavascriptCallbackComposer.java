@@ -6,9 +6,9 @@ import com.eu.habbo.messages.outgoing.Outgoing;
 import com.google.gson.Gson;
 
 public class JavascriptCallbackComposer extends MessageComposer {
-    private final PlayMarliAudioWebMessage webMessage;
+    private final WebMessage webMessage;
 
-    public JavascriptCallbackComposer(PlayMarliAudioWebMessage message) {
+    public JavascriptCallbackComposer(WebMessage message) {
         this.webMessage = message;
     }
     @Override

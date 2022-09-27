@@ -16,7 +16,6 @@ public class emulatorLoad implements EventListener {
 
     @EventHandler
     public static void onEmulatorLoaded(EmulatorLoadedEvent event) throws IOException {
-
         try {
             loadPlayerCommands.ILoadPlayerCommands();
             loadTexts.ILoadTexts();

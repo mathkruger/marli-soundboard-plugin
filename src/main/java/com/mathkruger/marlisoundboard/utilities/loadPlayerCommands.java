@@ -13,6 +13,8 @@ public class loadPlayerCommands {
         try {
             CommandHandler.addCommand(
                     new playMarliCommand("cmd_playMarli", Emulator.getTexts().getValue("cmd_playMarli.keys").split(";")));
+            CommandHandler.addCommand(
+                    new playMarliCommand("cmd_controlMarli", Emulator.getTexts().getValue("cmd_controlMarli.keys").split(";")));
         } catch (Exception ex) {
             LOGGER.error(" [Marli Soundboard] Error while loading player commands: ", ex);
         }

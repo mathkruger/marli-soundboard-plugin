@@ -25,7 +25,7 @@ public class checkDatabase {
                 return true;
             }
         } catch (SQLException sql) {
-            LOGGER.error(" [Plugin Template] Failed to check database for permission: " + name, sql);
+            LOGGER.error(" [Marli Soundboard] Failed to check database for permission: " + name, sql);
         }
 
         return defaultReturn;
@@ -36,10 +36,12 @@ public class checkDatabase {
             boolean reloadPermissions = false;
 
             reloadPermissions = registerPermission("cmd_playMarli", reloadPermissions);
+            reloadPermissions = registerPermission("cmd_controlMarli", reloadPermissions);
+
             if (reloadPermissions)
                 Emulator.getGameEnvironment().getPermissionsManager().reload();
         } catch (Exception e) {
-            LOGGER.error(" [Plugin Template] Failed to check database for permissions", e);
+            LOGGER.error(" [Marli Soundboard] Failed to check database for permissions", e);
         }
     }
 

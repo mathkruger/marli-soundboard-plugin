@@ -4,6 +4,7 @@ import com.eu.habbo.Emulator;
 import com.eu.habbo.habbohotel.users.Habbo;
 import com.eu.habbo.plugin.EventListener;
 import com.eu.habbo.plugin.HabboPlugin;
+import com.mathkruger.marlisoundboard.events.roomExit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.mathkruger.marlisoundboard.events.emulatorLoad;
@@ -21,6 +22,7 @@ public class MarliSoundboard extends HabboPlugin implements EventListener {
         try {
             INSTANCE = this;
             Emulator.getPluginManager().registerEvents(this, new emulatorLoad());
+            Emulator.getPluginManager().registerEvents(this, new roomExit());
         } catch (Exception e) {
             LOGGER.error(" [Marli Soundboard] Error while enabling plugin", e);
         }
