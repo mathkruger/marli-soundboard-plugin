@@ -5,9 +5,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 
 public class PlayMarliAudioWebMessage extends WebMessage {
-    public String header;
-    public JsonObject data;
-
     public PlayMarliAudioWebMessage(String audioName) {
         this.header = "marli_audio_play";
         this.data = new JsonObject();
