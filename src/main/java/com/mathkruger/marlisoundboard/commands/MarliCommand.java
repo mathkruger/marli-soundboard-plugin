@@ -38,7 +38,12 @@ public class MarliCommand extends Command {
                                 message = new ControlMarliAudioWebMessage(command, null);
                                 break;
                             case "tocar":
-                                message = new ControlMarliAudioWebMessage(command, strings[2]);
+                                String argument = null;
+
+                                if (strings.length == 3)
+                                    argument = strings[2];
+
+                                message = new ControlMarliAudioWebMessage(command, argument);
                                 break;
                         }
 
