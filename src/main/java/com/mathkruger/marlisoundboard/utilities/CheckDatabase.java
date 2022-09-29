@@ -8,8 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class checkDatabase {
-    private static final Logger LOGGER = LoggerFactory.getLogger(checkDatabase.class);
+public class CheckDatabase {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CheckDatabase.class);
 
     private static boolean registerPermission(String name, boolean defaultReturn) {
         try (Connection connection = Emulator.getDatabase().getDataSource().getConnection()) {
@@ -35,8 +35,8 @@ public class checkDatabase {
         try {
             boolean reloadPermissions = false;
 
-            reloadPermissions = registerPermission("cmd_playMarli", reloadPermissions);
-            reloadPermissions = registerPermission("cmd_controlMarli", reloadPermissions);
+            reloadPermissions = registerPermission("cmd_marli", reloadPermissions);
+            reloadPermissions = registerPermission("cmd_louvarMarli", reloadPermissions);
 
             if (reloadPermissions)
                 Emulator.getGameEnvironment().getPermissionsManager().reload();

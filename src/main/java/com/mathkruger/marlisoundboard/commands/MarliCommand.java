@@ -4,23 +4,23 @@ import com.eu.habbo.habbohotel.commands.Command;
 import com.eu.habbo.habbohotel.gameclients.GameClient;
 import com.eu.habbo.habbohotel.rooms.Room;
 import com.eu.habbo.habbohotel.users.Habbo;
-import com.mathkruger.marlisoundboard.utilities.models.ControlMarliAudioWebMessage;
-import com.mathkruger.marlisoundboard.utilities.models.JavascriptCallbackComposer;
+import com.mathkruger.marlisoundboard.models.ControlMarliAudioWebMessage;
+import com.mathkruger.marlisoundboard.models.JavascriptCallbackComposer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
-public class controlMarliCommand extends Command {
-    private static final Logger LOGGER = LoggerFactory.getLogger(playMarliCommand.class);
-    private static final String[] availableCommands = new String[]{ "pausar", "parar", "volume" };
+public class MarliCommand extends Command {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MarliCommand.class);
+    private static final String[] availableCommands = new String[]{ "pausar", "parar", "tocar" };
 
-    public controlMarliCommand(String permission, String[] keys) {
+    public MarliCommand(String permission, String[] keys) {
         super(permission, keys);
     }
 
     @Override
-    public boolean handle(GameClient gameClient, String[] strings) throws Exception {
+    public boolean handle(GameClient gameClient, String[] strings) {
         try {
             if (strings.length >= 2) {
                 String command = strings[1];
@@ -30,19 +30,18 @@ public class controlMarliCommand extends Command {
 
                 if (Arrays.asList(this.availableCommands).contains(command)) {
                     if (room.hasRights(habbo)) {
-                        String argument = null;
+                        ControlMarliAudioWebMessage message = null;
 
-                        if (command == "volume") {
-                            if (strings.length == 3) {
-                                argument = strings[2];
-                            }
-                            else {
-                                habbo.whisper("Você precisa passar um valor de 0 a 100 para o volume!");
-                                return true;
-                            }
+                        switch (command) {
+                            case "pausar":
+                            case "parar":
+                                message = new ControlMarliAudioWebMessage(command, null);
+                                break;
+                            case "tocar":
+                                message = new ControlMarliAudioWebMessage(command, strings[2]);
+                                break;
                         }
 
-                        ControlMarliAudioWebMessage message = new ControlMarliAudioWebMessage(command, argument);
                         room.sendComposer(new JavascriptCallbackComposer(message).compose());
                     }
                     else {
@@ -50,7 +49,7 @@ public class controlMarliCommand extends Command {
                     }
                 }
                 else {
-                    habbo.whisper("Esse som ainda não é suportado :(");
+                    habbo.whisper("Esse comando ainda não é suportado, utilize 'tocar <musica>', 'pausar' ou 'parar'");
                 }
             }
         } catch (Exception e) {
