@@ -19,18 +19,20 @@ public class LouvarMarliCommand extends Command {
     @Override
     public boolean handle(GameClient gameClient, String[] strings) throws Exception {
         try {
-            if (strings.length >= 2) {
-                Habbo habbo = gameClient.getHabbo();
+            Habbo habbo = gameClient.getHabbo();
 
-                Room marliChurch = Emulator
-                        .getGameEnvironment()
-                        .getRoomManager()
-                        .getRoomsStaffPromoted()
-                        .stream()
-                        .filter(x -> "Igreja da Marli".equals(x.getName()))
-                        .findFirst().get();
+            Room marliChurch = Emulator
+                    .getGameEnvironment()
+                    .getRoomManager()
+                    .getRoomsStaffPromoted()
+                    .stream()
+                    .filter(x -> "Igreja da Marli".equals(x.getName()))
+                    .findFirst().get();
 
-                habbo.goToRoom(marliChurch.getId());
+            habbo.givePixels(10);
+            habbo.goToRoom(marliChurch.getId());
+
+            for (int i = 0; i < 3; i++) {
                 habbo.talk("Salve Marli!");
             }
         } catch (Exception ex) {
