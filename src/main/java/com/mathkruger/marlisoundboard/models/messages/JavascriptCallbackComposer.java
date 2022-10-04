@@ -1,4 +1,4 @@
-package com.mathkruger.marlisoundboard.models;
+package com.mathkruger.marlisoundboard.models.messages;
 
 import com.eu.habbo.messages.ServerMessage;
 import com.eu.habbo.messages.outgoing.MessageComposer;

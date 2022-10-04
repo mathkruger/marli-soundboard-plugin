@@ -4,16 +4,22 @@ import com.eu.habbo.habbohotel.commands.Command;
 import com.eu.habbo.habbohotel.gameclients.GameClient;
 import com.eu.habbo.habbohotel.rooms.Room;
 import com.eu.habbo.habbohotel.users.Habbo;
-import com.mathkruger.marlisoundboard.models.ControlMarliAudioWebMessage;
-import com.mathkruger.marlisoundboard.models.JavascriptCallbackComposer;
+import com.mathkruger.marlisoundboard.models.MarliSong;
+import com.mathkruger.marlisoundboard.models.messages.ClearSongListWebMessage;
+import com.mathkruger.marlisoundboard.models.messages.ControlMarliAudioWebMessage;
+import com.mathkruger.marlisoundboard.models.messages.JavascriptCallbackComposer;
+import com.mathkruger.marlisoundboard.models.messages.SongsListWebMessage;
+import com.mathkruger.marlisoundboard.models.messages.WebMessage;
+import com.mathkruger.marlisoundboard.utilities.CheckDatabase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class MarliCommand extends Command {
     private static final Logger LOGGER = LoggerFactory.getLogger(MarliCommand.class);
-    private static final String[] availableCommands = new String[]{ "pausar", "parar", "tocar" };
+    private static final String[] availableCommands = new String[]{ "pausar", "parar", "tocar", "listar", "fechar_lista" };
 
     public MarliCommand(String permission, String[] keys) {
         super(permission, keys);
@@ -30,7 +36,7 @@ public class MarliCommand extends Command {
 
                 if (Arrays.asList(this.availableCommands).contains(command)) {
                     if (room.hasRights(habbo)) {
-                        ControlMarliAudioWebMessage message = null;
+                        WebMessage message = null;
 
                         switch (command) {
                             case "pausar":
@@ -44,6 +50,15 @@ public class MarliCommand extends Command {
                                     argument = strings[2];
 
                                 message = new ControlMarliAudioWebMessage(command, argument);
+                                break;
+
+                            case "listar":
+                                List<MarliSong> songs = CheckDatabase.IGetMarliSongsList();
+                                message = new SongsListWebMessage(songs);
+                                break;
+
+                            case "fechar_lista":
+                                message = new ClearSongListWebMessage();
                                 break;
                         }
 
